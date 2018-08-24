@@ -49,7 +49,6 @@ const Player = () => (
             railStyle={{ background: '404040', borderRadius: 10 }}
             trackStyle={{ background: '#1ed760' }}
             handleStyle={{ border: 0 }}
-            value={50}
           />
         </ProgressSlider>
         <span>4:45</span>
@@ -61,7 +60,6 @@ const Player = () => (
         railStyle={{ background: '#404040', borderRadius: 10 }}
         trackStyle={{ background: '#fff' }}
         handleStyle={{ display: 'none' }}
-        value={50}
       />
     </Volume>
   </Container>
