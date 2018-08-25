@@ -8,7 +8,7 @@ const Browse = () => (
   <Container>
     <Title>Navegar</Title>
     <List>
-      <Playlist href="">
+      <Playlist to="/playlist/1">
         <img
           src="http://www.metalmusicarchives.com/images/covers/malmsteen-yngwie-j-rising-force-20161206000514.jpg"
           alt="YJM"
@@ -19,7 +19,7 @@ const Browse = () => (
           essa filho da puta.
         </p>
       </Playlist>
-      <Playlist href="">
+      <Playlist to="/playlist/1">
         <img
           src="http://www.metalmusicarchives.com/images/covers/malmsteen-yngwie-j-rising-force-20161206000514.jpg"
           alt="YJM"
@@ -30,7 +30,7 @@ const Browse = () => (
           essa filho da puta.
         </p>
       </Playlist>
-      <Playlist href="">
+      <Playlist to="/playlist/1">
         <img
           src="http://www.metalmusicarchives.com/images/covers/malmsteen-yngwie-j-rising-force-20161206000514.jpg"
           alt="YJM"
@@ -41,7 +41,7 @@ const Browse = () => (
           essa filho da puta.
         </p>
       </Playlist>
-      <Playlist href="">
+      <Playlist to="/playlist/1">
         <img
           src="http://www.metalmusicarchives.com/images/covers/malmsteen-yngwie-j-rising-force-20161206000514.jpg"
           alt="YJM"
