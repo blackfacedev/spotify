@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Slider from 'rc-slider';
 import PropTypes from 'prop-types';
 
@@ -20,30 +20,31 @@ const Player = ({ player }) => (
   <Container>
     {!!player.currentSong && <Sound url={player.currentSong.file} playStatus={player.status} />}
     <Current>
-      <img
-        src="http://www.metalmusicarchives.com/images/covers/malmsteen-yngwie-j-rising-force-20161206000514.jpg"
-        alt="Cover"
-      />
-      <div>
-        <span>Rising Force</span>
-        <small>Yngwie J Malmsteen</small>
-      </div>
+      {!!player.currentSong && (
+        <Fragment>
+          <img src={player.currentSong.thumbnail} alt={player.currentSong.title} />
+          <div>
+            <span>{player.currentSong.title}</span>
+            <small>{player.currentSong.author}</small>
+          </div>
+        </Fragment>
+      )}
     </Current>
     <Progress>
       <Controls>
-        <button>
+        <button type="button">
           <img src={ShuffleIcon} alt="ShuffleIcon" />
         </button>
-        <button>
+        <button type="button">
           <img src={BackwardIcon} alt="BackwardIcon" />
         </button>
-        <button>
+        <button type="button">
           <img src={PlayIcon} alt="PlayIcon" />
         </button>
-        <button>
+        <button type="button">
           <img src={ForwardIcon} alt="ForwardIcon" />
         </button>
-        <button>
+        <button type="button">
           <img src={RepeatIcon} alt="RepeatIcon" />
         </button>
       </Controls>
@@ -74,6 +75,9 @@ Player.propTypes = {
   player: PropTypes.shape({
     currentSong: PropTypes.shape({
       file: PropTypes.string,
+      title: PropTypes.string,
+      author: PropTypes.string,
+      thumbnail: PropTypes.string,
     }),
     status: PropTypes.string,
   }).isRequired,
