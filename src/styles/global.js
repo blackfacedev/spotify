@@ -22,4 +22,8 @@ injectGlobal`
         color: #fff;
 
     }
+
+    button {
+      cursor: pointer;
+    }
 `;

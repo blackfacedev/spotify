@@ -1,5 +1,9 @@
 import React from 'react';
 import Slider from 'rc-slider';
+import PropTypes from 'prop-types';
+
+import Sound from 'react-sound';
+import { connect } from 'react-redux';
 import {
   Container, Current, Volume, Progress, Controls, Time, ProgressSlider,
 } from './styles';
@@ -12,8 +16,9 @@ import PauseIcon from '../../assets/images/pause.svg';
 import ForwardIcon from '../../assets/images/forward.svg';
 import RepeatIcon from '../../assets/images/repeat.svg';
 
-const Player = () => (
+const Player = ({ player }) => (
   <Container>
+    {!!player.currentSong && <Sound url={player.currentSong.file} playStatus={player.status} />}
     <Current>
       <img
         src="http://www.metalmusicarchives.com/images/covers/malmsteen-yngwie-j-rising-force-20161206000514.jpg"
@@ -65,4 +70,17 @@ const Player = () => (
   </Container>
 );
 
-export default Player;
+Player.propTypes = {
+  player: PropTypes.shape({
+    currentSong: PropTypes.shape({
+      file: PropTypes.string,
+    }),
+    status: PropTypes.string,
+  }).isRequired,
+};
+
+const mapStateToProps = state => ({
+  player: state.player,
+});
+
+export default connect(mapStateToProps)(Player);
